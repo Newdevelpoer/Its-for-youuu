@@ -17,6 +17,6 @@ jest.mock('@react-three/drei', () => ({
 
 test('renders Living Memory app', () => {
   render(<App />);
-  const loadingOrContent = screen.getByText(/Living Memory|Loading/i);
-  expect(loadingOrContent).toBeInTheDocument();
+  const matches = screen.getAllByText(/Living Memory|Loading/i);
+  expect(matches.length).toBeGreaterThan(0);
 });
