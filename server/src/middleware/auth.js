@@ -1,6 +1,13 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'living-memory-secret-key-change-in-production';
+const JWT_SECRET = process.env.JWT_SECRET;
+
+if (!JWT_SECRET && process.env.NODE_ENV === 'production') {
+  console.error('FATAL: JWT_SECRET environment variable is not set. Exiting.');
+  process.exit(1);
+}
+
+const jwtSecret = JWT_SECRET || 'dev-only-secret-do-not-use-in-production';
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -10,7 +17,7 @@ const authMiddleware = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, jwtSecret);
     req.user = decoded;
     next();
   } catch (err) {
@@ -18,4 +25,4 @@ const authMiddleware = (req, res, next) => {
   }
 };
 
-module.exports = { authMiddleware, JWT_SECRET };
+module.exports = { authMiddleware, JWT_SECRET: jwtSecret };

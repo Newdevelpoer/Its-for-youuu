@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
     res.json({ count: visit.count });
   } catch (err) {
     console.error('Error fetching visit count:', err.message);
-    res.json({ count: 0 });
+    res.status(500).json({ message: 'Failed to fetch visit count', count: 0 });
   }
 });
 
@@ -32,7 +32,7 @@ router.post('/increment', async (req, res) => {
     res.json({ count: visit.count });
   } catch (err) {
     console.error('Error incrementing visit count:', err.message);
-    res.json({ count: 0 });
+    res.status(500).json({ message: 'Failed to increment visit count', count: 0 });
   }
 });
 

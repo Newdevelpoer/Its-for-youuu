@@ -1,6 +1,7 @@
-// Configure the birthday date here
-const BIRTHDAY_MONTH = 1; // January (1-indexed)
-const BIRTHDAY_DAY = 1;   // Day of month
+// Configure the birthday date here (update for the special person)
+// Set REACT_APP_BIRTHDAY_MONTH and REACT_APP_BIRTHDAY_DAY env vars, or edit these defaults
+const BIRTHDAY_MONTH = parseInt(process.env.REACT_APP_BIRTHDAY_MONTH, 10) || 1; // January (1-indexed)
+const BIRTHDAY_DAY = parseInt(process.env.REACT_APP_BIRTHDAY_DAY, 10) || 1;     // Day of month
 
 export const getBirthdayDate = (year) => {
   return new Date(year, BIRTHDAY_MONTH - 1, BIRTHDAY_DAY);

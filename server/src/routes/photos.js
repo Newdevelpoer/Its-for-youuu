@@ -56,7 +56,7 @@ router.get('/:category', async (req, res) => {
     res.json(photos);
   } catch (err) {
     console.error('Error fetching photos:', err.message);
-    res.json([]);
+    res.status(500).json({ message: 'Failed to fetch photos' });
   }
 });
 

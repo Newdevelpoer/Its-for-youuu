@@ -38,9 +38,13 @@ mongoose.connect(MONGO_URI)
   })
   .catch((err) => {
     console.error('MongoDB connection error:', err.message);
-    // Start server even without DB for development
+    if (process.env.NODE_ENV === 'production') {
+      console.error('FATAL: Cannot start in production without database. Exiting.');
+      process.exit(1);
+    }
+    // Start server without DB only in development
     app.listen(PORT, () => {
-      console.log(`Server running on port ${PORT} (without MongoDB)`);
+      console.log(`Server running on port ${PORT} (development mode, without MongoDB)`);
     });
   });
 
