@@ -55,6 +55,7 @@ router.get('/:category', async (req, res) => {
     const photos = await Photo.find({ category }).sort({ createdAt: -1 });
     res.json(photos);
   } catch (err) {
+    console.error('Error fetching photos:', err.message);
     res.json([]);
   }
 });
@@ -83,6 +84,7 @@ router.post('/:category/upload', authMiddleware, upload.single('photo'), async (
     await photo.save();
     res.status(201).json(photo);
   } catch (err) {
+    console.error('Photo upload error:', err.message);
     res.status(500).json({ message: 'Upload failed' });
   }
 });

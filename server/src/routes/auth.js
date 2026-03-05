@@ -29,6 +29,7 @@ router.post('/register', [
     const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: '7d' });
     res.status(201).json({ token, user: { id: user._id, username: user.username } });
   } catch (err) {
+    console.error('Registration error:', err.message);
     res.status(500).json({ message: 'Server error' });
   }
 });
@@ -58,6 +59,7 @@ router.post('/login', [
     const token = jwt.sign({ id: user._id, username: user.username }, JWT_SECRET, { expiresIn: '7d' });
     res.json({ token, user: { id: user._id, username: user.username } });
   } catch (err) {
+    console.error('Login error:', err.message);
     res.status(500).json({ message: 'Server error' });
   }
 });
