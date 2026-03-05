@@ -201,7 +201,7 @@ export default function Surprise() {
               May this year bring you all the magic you deserve — adventures that take your breath away, moments of pure joy, and the quiet happiness of knowing you are endlessly loved. 🌸
             </p>
             <p className="leading-relaxed" style={{ color: theme.subtext, lineHeight: '1.9' }}>
-              Here&apos;s to you, to us, and to all the beautiful stories yet to be written. Happy Birthday, my wonderful Sunflower. 💫
+              Here's to you, to us, and to all the beautiful stories yet to be written. Happy Birthday, my wonderful Sunflower. 💫
             </p>
             <p className="mt-4 font-bold" style={{ color: isDark ? '#03C988' : '#ff6b9d' }}>
               With all my heart ❤️

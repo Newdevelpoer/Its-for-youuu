@@ -10,12 +10,12 @@ const STORY_SECTIONS = [
   {
     emoji: '🐼',
     title: 'The Little Things',
-    text: 'It\'s the tiny moments that create the biggest memories. The way you get excited about pandas 🐼, how your eyes light up at the sight of flowers 🌸, the way you hum softly when you\'re deep in thought. These little details are the brushstrokes that paint someone extraordinary.',
+    text: "It's the tiny moments that create the biggest memories. The way you get excited about pandas 🐼, how your eyes light up at the sight of flowers 🌸, the way you hum softly when you're deep in thought. These little details are the brushstrokes that paint someone extraordinary.",
   },
   {
     emoji: '🌸',
     title: 'Your Magic',
-    text: 'You carry kindness like it\'s the most natural thing in the world. You notice beauty in places most people walk past. A blooming flower on a city street, the way sunlight filters through leaves, the sound of rain on a quiet afternoon — you see poetry everywhere, and somehow that makes everything around you more beautiful too.',
+    text: "You carry kindness like it's the most natural thing in the world. You notice beauty in places most people walk past. A blooming flower on a city street, the way sunlight filters through leaves, the sound of rain on a quiet afternoon — you see poetry everywhere, and somehow that makes everything around you more beautiful too.",
   },
   {
     emoji: '⭐',
@@ -25,7 +25,7 @@ const STORY_SECTIONS = [
   {
     emoji: '🌙',
     title: 'Always & Forever',
-    text: 'No matter the season — monsoon or winter, spring or autumn — some things remain constant. This space will always be yours, these memories will always be real, and these words will always be true. Here\'s to every beautiful day that has been, and all the magical ones yet to come. 💫',
+    text: "No matter the season — monsoon or winter, spring or autumn — some things remain constant. This space will always be yours, these memories will always be real, and these words will always be true. Here's to every beautiful day that has been, and all the magical ones yet to come. 💫",
   },
 ]
 
@@ -190,7 +190,7 @@ export default function About() {
             className="text-xl italic"
             style={{ color: theme.subtext }}
           >
-            &quot;You are the sunflower in every season of this garden.&quot;
+            "You are the sunflower in every season of this garden."
           </p>
         </div>
       </div>
